@@ -1,6 +1,5 @@
 /// <reference types="cypress" />
 
-// Final Code
 describe('Navbar Test', () => {
     before(() => {
         cy.visit('http://zero.webappsecurity.com/index.html')
@@ -15,10 +14,14 @@ describe('Navbar Test', () => {
     it('Should display feedback content', () => {
         cy.contains('Feedback').click()
         cy.url().should('include', 'feedback.html')
+        // Tugas
+        cy.get('h3').should('contain.text', 'Feedback')
     });
 
     it('Should display homepage content', () => {
         cy.contains('Zero Bank').click()
         cy.url().should('include', 'index.html')
+        // Tugas
+        cy.get('strong').should('contain.text', 'Home')
     });
 });
